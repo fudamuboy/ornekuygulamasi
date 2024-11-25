@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="demo"></p>
+  <script>
+    /* Déclaration de la fonction 'maFonction' */
+function maFonction(monObjet) {
+    monObjet.marque = "Toyota";
+  }
+  
+  /*
+   * Déclaration de la variable 'mavoiture';
+   * création et initialisation d'un nouvel objet;
+   * assigner une référence à 'mavoiture'
+   */
+  const mavoiture = {
+    marque: "Honda",
+    modele: "Accord",
+    annee: 1998,
+  };
+  
+  /* Affiche 'Honda' */
+  console.log(mavoiture.modele);
+  
+  /* Passer la référence de l'objet à la fonction */
+  maFonction(mavoiture);
+  
+  /*
+   * Affiche 'Toyota' pour valeur de la propriété 'marque'
+   * de l'objet. C'est ce que la fonction a changé.
+   */
+  console.log(mavoiture.marque);
+  console.log(mavoiture.annee);
+   
+  let person = {
+  _name: 'John', // Utiliser une propriété différente
+  get name() {
+    return this._name;
+  }
+};
+
+console.log(person.name); // John
+const obj = {
+  _value: 0, // Propriété interne
+  set value(newValue) {
+    this._value = newValue;
+  }
+};
+
+obj.value = 42; // Appelle le setter
+console.log(obj._value); // 42
+
+
+// HOw to use function call() in with "this"js
+
+const A={
+  fullName:function(city,country) {
+    return this.fname+"  "+ this.lname+","+city+","+country;
+  }
+}
+
+const B={
+  fname:"Zil",
+  lname:"thx"
+}
+document.getElementById("demo").innerHTML=A.fullName.call(B,"BKO","MALI");
+
+// function apply() is same as f.call() juste we write documment......=A.fullName.apply(B,["BKO","MALI"])
+// La differnce est juste le crocher 
+/*
+class Car {
+  constructor(brand){
+    this._cname=brand;
+  }
+  get cname(){
+    return this._cname;
+  }
+  set cname(x){
+    this._cname=x;
+  }
+
+
+}
+const myCar=new Car("FORD");
+
+ myCar.cname="Leksus";
+ document.getElementById("demo").innerHTML=myCar.cname;
+ console.log(myCar._cname);
+*/
+//--------- ceci ouvre pour ecrire quelque et afficher ds console ou sur l'ecran si tu veux
+/*
+  let fullName=prompt("please write something");
+
+  console.log(fullName);
+
+  //document.getElementById("demo").innerHTML=fullName;
+  document.querySelector("#demo").innerHTML=fullName;
+
+var randomSayi = Math.floor(Math.random() * 10);
+//Girdiğimiz sayıyı aklında tutması için prompt değişkene atanır
+//var tahmin = prompt("Bir sayı gir ve rastgele sayıyı bulmaya çalış!");
+if (tahmin === randomSayi && tahmin != null) alert("Bildin!!!");
+else if (tahmin == "") alert("Boş giriş yaptınız!");
+else if (tahmin == null) alert("Giriş yapmaktan vazgeçtiniz!");
+else {
+  alert("Bir daha denee :(, Random sayi: " + randomSayi);
+}
+  */
+  let x = 5;
+function myFunc() {
+  let x = 10;
+  console.log(x);
+}
+myFunc();
+console.log(x);
+
+  </script>
+<script src="index.js"></script>  
+</body>
+</html>
